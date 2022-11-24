@@ -250,6 +250,8 @@ window.addEventListener('load', function(){
             this.width = 2400;
             this.height = 720;
             this.speed = 20;
+            this.i = 0;
+            this.images = ["background.png", "background_single.png", "bana2.png"];
         }
         playField(bgImage){
             this.image.src = bgImage;
@@ -269,7 +271,7 @@ window.addEventListener('load', function(){
         restart(){
             this.x = 0;
             ctx.clearRect(0,0,canvas.width, canvas.height);
-            this.image.src = "bana2.gif";
+            //this.image.src = "bana2.png";
             //this.speed = 20;
         }
     }
@@ -466,7 +468,7 @@ window.addEventListener('load', function(){
             startButton.style.visibility = 'visible';
             homeButton.style.visibility = 'visible';
             
-            context.drawImage(this.scoreboard, canvas.width - 350, canvas.height - 500);
+            context.drawImage(player.scoreboard, canvas.width - 350, canvas.height - 500);
             if(localStorage.getItem('score') >= 1000){
                 context.fillStyle = '#340000';
                 context.fillRect(canvas.width - 250, canvas.height - 420, 150, 50);
@@ -587,7 +589,7 @@ window.addEventListener('load', function(){
     let randomEnemyInterval = Math.random() * 1000 + 500;
 
     background.draw(ctx);
-    ctx.font = '40px Covered By Your Grace';
+    ctx.font = '60px Covered By Your Grace';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
     ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
@@ -600,12 +602,52 @@ window.addEventListener('load', function(){
             playchoice.style.visibility = 'hidden';
             startButton.style.visibility = 'visible';
             homeButton.style.visibility = 'visible';
+            fwd.style.visibility = 'hidden';
+            bwd.style.visibility = 'hidden';
     
             ctx.clearRect(0,0,canvas.width, canvas.height);
             //background.playField("background_single.png");
-            background.image.src = "bana2.gif";
-            //body.style.backgroundColor = "#8a7c5a";
-            if(background.image.src = "bana2.gif"){
+            //background.image.src = "bana2.png";
+            background.image.src = background.images[background.i];
+            if(background.image.src == background.images[0]){
+                body.style.backgroundColor = "rgb(22, 145, 150)";
+                body.style.backgroundImage = "url('grafity.jpg')";
+                background.image.onload = function(){
+                    ctx.clearRect(0,0,canvas.width, canvas.height);
+                    background.draw(ctx);
+                    player.draw(ctx);
+                    ctx.fillStyle = 'black';
+                    ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2, 200);
+                    ctx.fillStyle = 'white';
+                    ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2 + 2, 202);
+                }
+            }
+            else if(background.image.src == background.images[1]){
+                body.style.backgroundColor = "darkslategray";
+                body.style.backgroundImage = "url('grafity.jpg')";
+                background.image.onload = function(){
+                    ctx.clearRect(0,0,canvas.width, canvas.height);
+                    background.draw(ctx);
+                    player.draw(ctx);
+                    ctx.fillStyle = 'black';
+                    ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2, 200);
+                    ctx.fillStyle = 'white';
+                    ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2 + 2, 202);
+                }
+            }
+            else if(background.image.src == background.images[2]){
+                body.style.backgroundImage = "url('grafity.jpg')";
+                background.image.onload = function(){
+                    ctx.clearRect(0,0,canvas.width, canvas.height);
+                    background.draw(ctx);
+                    player.draw(ctx);
+                    ctx.fillStyle = 'black';
+                    ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2, 200);
+                    ctx.fillStyle = 'white';
+                    ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2 + 2, 202);
+                }
+            } else{
+                body.style.backgroundImage = "url('grafity1.jpg')";
                 background.image.onload = function(){
                     ctx.clearRect(0,0,canvas.width, canvas.height);
                     background.draw(ctx);
@@ -617,6 +659,82 @@ window.addEventListener('load', function(){
                 }
             }
         }, 100);              
+    })
+
+    let fwd = document.getElementById('forward');
+    fwd.addEventListener('click', () => {
+        setTimeout(() => {
+            playchoice.style.visibility = 'visible';
+            startButton.style.visibility = 'hidden';
+            homeButton.style.visibility = 'hidden';
+            background.image.src = background.images[0];
+            body.style.backgroundColor = "rgb(25, 122, 85)";
+            body.style.backgroundImage = "url('mainbackground.gif')";
+            body.style.backgroundSize = "100% auto";
+            // Check If Index Is Under Max
+            if(background.i < background.images.length - 1){
+                // Add 1 to Index
+                background.i++;
+            } else {
+                // Reset Back To 0 to initialize the image source back to the index of 0
+                background.i = 0;
+            }
+            background.image.onload = function(){
+                
+                // on button click event, show the image source with the current index of i
+                background.image.src = background.images[background.i]
+                background.x = 0;
+                ctx.clearRect(0,0,canvas.width, canvas.height);
+                background.draw(ctx);
+                ctx.fillStyle = 'black';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+                player.x = 100;
+                player.y = player.gameHeight - player.height;
+                player.maxFrame = 8;
+                player.frameX = 0;
+                player.frameY = 0;
+            }
+        }, 100);
+    })
+
+    let bwd = document.getElementById('backward');
+    bwd.addEventListener('click', () => {
+        setTimeout(() => {
+            playchoice.style.visibility = 'visible';
+            startButton.style.visibility = 'hidden';
+            homeButton.style.visibility = 'hidden';
+            background.image.src = background.images[0];
+            body.style.backgroundColor = "rgb(25, 122, 85)";
+            body.style.backgroundImage = "url('mainbackground.gif')";
+            body.style.backgroundSize = "100% auto";
+            // Check If Index Is Over 0
+            if(background.i > 0){
+                // Remove 1 to Index
+                background.i--;
+            } else {
+                // Reset Back To 0 to initialize the image source back to the index of 2
+                background.i = 2;
+            }
+            background.image.onload = function(){
+                
+                // on button click event, show the image source with the current index of i
+                background.image.src = background.images[background.i]
+                background.x = 0;
+                ctx.clearRect(0,0,canvas.width, canvas.height);
+                background.draw(ctx);
+                ctx.fillStyle = 'black';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+                player.x = 100;
+                player.y = player.gameHeight - player.height;
+                player.maxFrame = 8;
+                player.frameX = 0;
+                player.frameY = 0;
+            }
+        }, 100);
     })
 
     // function for the main animation loop, runs 60times per second, updating and drawing our game over and over
@@ -657,7 +775,12 @@ window.addEventListener('load', function(){
         playchoice.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
         homeButton.style.visibility = 'hidden';
-        background.image.src = "background.png";
+        fwd.style.visibility = 'visible';
+        bwd.style.visibility = 'visible';
+        background.image.src = background.images[background.i];
+        body.style.backgroundColor = "rgb(25, 122, 85)";
+        body.style.backgroundImage = "url('mainbackground.gif')";
+        body.style.backgroundSize = "100% auto";
         background.image.onload = function(){
             background.x = 0;
             ctx.clearRect(0,0,canvas.width, canvas.height);

@@ -7,7 +7,9 @@
 }
 
 body{
-    background: rgb(25, 122, 85);
+    /*background: rgb(25, 122, 85);*/
+    background: url('mainbackground.gif');
+    background-size: 100% auto;
 }
 
 #canvas1{
@@ -27,22 +29,6 @@ body{
     display: none;
 }
 
-.forward{
-    position: absolute;
-    top: 50%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    /*visibility: hidden;*/
-}
-
-.backward{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    /*visibility: hidden;*/
-}
-
 #fullScreenButton{
     position: absolute;
     font-size: 15px;
@@ -55,6 +41,48 @@ body{
     background-color: rgb(41, 107, 85);
     border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
+}
+
+#forward{
+    position: absolute;
+    font-size: 20px;
+    padding: 10px;
+    top: 50%;
+    left: 90%;
+    transform: translateX(-50%);
+    height: 45px;
+    width: 100px;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    background-color: rgb(91, 218, 175);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+#forward:hover{
+    background-color: rgb(197, 66, 209);
+    cursor: pointer;
+}
+
+#backward{
+    position: absolute;
+    font-size: 20px;
+    padding: 10px;
+    top: 50%;
+    left: 10%;
+    transform: translateX(-50%);
+    height: 45px;
+    width: 100px;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    background-color: rgb(91, 218, 175);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+#backward:hover{
+    background-color: rgb(197, 66, 209);
+    cursor: pointer;
 }
 
 #playChoice{
@@ -82,10 +110,10 @@ body{
     position: absolute;
     font-size: 20px;
     padding: 10px;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translateX(-50%);
-    height: 75px;
+    height: 50px;
     width: 100px;
     color: #fff;
     text-shadow: 2px 2px #000;
@@ -93,6 +121,7 @@ body{
     border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
     visibility: hidden;
+    margin-bottom: 10px;
 }
 
 #startButton:hover{
@@ -104,10 +133,10 @@ body{
     position: absolute;
     font-size: 20px;
     padding: 10px;
-    top: 60%;
+    top: 55%;
     left: 50%;
     transform: translateX(-50%);
-    height: 75px;
+    height: 50px;
     width: 100px;
     color: #fff;
     text-shadow: 2px 2px #000;
