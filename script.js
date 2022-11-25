@@ -570,16 +570,18 @@ window.addEventListener('load', function(){
         console.log(document.fullscreenElement);
         if (!document.fullscreenElement) {
             //requestFullscreen is an asynchronous method which returns a promise
-            canvas.requestFullscreen().catch(err => {
+            body.requestFullscreen().catch(err => {
                 alert(`Error, can't enable full-screen mode: ${err.message}`);
             });
         } else {
             document.exitFullscreen();
         }
     }
+
+    //body.onload = toggleFullScreen();
     
     // Fullscreen event removed
-    // fullScreenButton.addEventListener('click', toggleFullScreen); 
+    fullScreenButton.addEventListener('click', toggleFullScreen); 
 
     // create an instance of InputHandler-class
     const input = new InputHandler();
