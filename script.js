@@ -103,7 +103,7 @@ window.addEventListener('load', function(){
             this.gameHeight = gameHeight;
             this.width = 200;
             this.height = 200;
-            this.x = 100;
+            this.x = 50;
             this.y = this.gameHeight - this.height;
             // bring image spritesheet into the game
             this.image = document.getElementById('playerImage');
@@ -125,7 +125,7 @@ window.addEventListener('load', function(){
 
         // method to restart player to it's initial position
         restart(){
-            this.x = 100;
+            this.x = 50;
             this.y = this.gameHeight - this.height;
             this.maxFrame = 8;
             this.frameX = 0;
@@ -598,9 +598,16 @@ window.addEventListener('load', function(){
     ctx.font = '60px Covered By Your Grace';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
-    ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
-    ctx.fillStyle = 'white';
-    ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+    ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 100);
+    ctx.fillStyle = 'gainsboro';
+    ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 102);
+
+    ctx.font = '40px Covered By Your Grace';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'black';
+    ctx.fillText('Arena Selection', canvas.width / 2, 150);
+    ctx.fillStyle = 'crimson';
+    ctx.fillText('Arena Selection', canvas.width / 2 + 2, 152);
     
     let playchoice = document.getElementById("playChoice");
     playchoice.addEventListener('click', function(){
@@ -692,10 +699,19 @@ window.addEventListener('load', function(){
                 background.x = 0;
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
+                ctx.font = '60px Covered By Your Grace';
                 ctx.fillStyle = 'black';
-                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
-                ctx.fillStyle = 'white';
-                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 100);
+                ctx.fillStyle = 'gainsboro';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 102);
+
+                ctx.font = '40px Covered By Your Grace';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = 'black';
+                ctx.fillText('Arena Selection', canvas.width / 2, 150);
+                ctx.fillStyle = 'crimson';
+                ctx.fillText('Arena Selection', canvas.width / 2 + 2, 152);
+
                 player.x = 100;
                 player.y = player.gameHeight - player.height;
                 player.maxFrame = 8;
@@ -730,10 +746,19 @@ window.addEventListener('load', function(){
                 background.x = 0;
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
+                ctx.font = '60px Covered By Your Grace';
                 ctx.fillStyle = 'black';
-                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
-                ctx.fillStyle = 'white';
-                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 100);
+                ctx.fillStyle = 'gainsboro';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 102);
+
+                ctx.font = '40px Covered By Your Grace';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = 'black';
+                ctx.fillText('Arena Selection', canvas.width / 2, 150);
+                ctx.fillStyle = 'crimson';
+                ctx.fillText('Arena Selection', canvas.width / 2 + 2, 152);
+                
                 player.x = 100;
                 player.y = player.gameHeight - player.height;
                 player.maxFrame = 8;
@@ -792,10 +817,19 @@ window.addEventListener('load', function(){
                 background.x = 0;
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
+                ctx.font = '60px Covered By Your Grace';
                 ctx.fillStyle = 'black';
-                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
-                ctx.fillStyle = 'white';
-                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 100);
+                ctx.fillStyle = 'gainsboro';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 102);
+
+                ctx.font = '40px Covered By Your Grace';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = 'black';
+                ctx.fillText('Arena Selection', canvas.width / 2, 150);
+                ctx.fillStyle = 'crimson';
+                ctx.fillText('Arena Selection', canvas.width / 2 + 2, 152);
+
                 player.x = 100;
                 player.y = player.gameHeight - player.height;
                 player.maxFrame = 8;
