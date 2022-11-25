@@ -663,7 +663,7 @@ window.addEventListener('load', function(){
 
     let fwd = document.getElementById('forward');
     fwd.addEventListener('click', () => {
-        setTimeout(() => {
+        setTimeout(function() {
             playchoice.style.visibility = 'visible';
             startButton.style.visibility = 'hidden';
             homeButton.style.visibility = 'hidden';
@@ -701,7 +701,7 @@ window.addEventListener('load', function(){
 
     let bwd = document.getElementById('backward');
     bwd.addEventListener('click', () => {
-        setTimeout(() => {
+        setTimeout(function() {
             playchoice.style.visibility = 'visible';
             startButton.style.visibility = 'hidden';
             homeButton.style.visibility = 'hidden';
@@ -772,29 +772,31 @@ window.addEventListener('load', function(){
     })
     
     homeButton.addEventListener('click', function(){
-        playchoice.style.visibility = 'visible';
-        startButton.style.visibility = 'hidden';
-        homeButton.style.visibility = 'hidden';
-        fwd.style.visibility = 'visible';
-        bwd.style.visibility = 'visible';
-        background.image.src = background.images[background.i];
-        body.style.backgroundColor = "rgb(25, 122, 85)";
-        body.style.backgroundImage = "url('mainbackground.gif')";
-        body.style.backgroundSize = "100% auto";
-        background.image.onload = function(){
-            background.x = 0;
-            ctx.clearRect(0,0,canvas.width, canvas.height);
-            background.draw(ctx);
-            ctx.fillStyle = 'black';
-            ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
-            ctx.fillStyle = 'white';
-            ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
-            player.x = 100;
-            player.y = player.gameHeight - player.height;
-            player.maxFrame = 8;
-            player.frameX = 0;
-            player.frameY = 0;
-        }
+        setTimeout(function(){
+            playchoice.style.visibility = 'visible';
+            startButton.style.visibility = 'hidden';
+            homeButton.style.visibility = 'hidden';
+            fwd.style.visibility = 'visible';
+            bwd.style.visibility = 'visible';
+            background.image.src = background.images[background.i];
+            body.style.backgroundColor = "rgb(25, 122, 85)";
+            body.style.backgroundImage = "url('mainbackground.gif')";
+            body.style.backgroundSize = "100% auto";
+            background.image.onload = function(){
+                background.x = 0;
+                ctx.clearRect(0,0,canvas.width, canvas.height);
+                background.draw(ctx);
+                ctx.fillStyle = 'black';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2, 200);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Welcome to SickorSafe Game!', canvas.width / 2 + 2, 202);
+                player.x = 100;
+                player.y = player.gameHeight - player.height;
+                player.maxFrame = 8;
+                player.frameX = 0;
+                player.frameY = 0;
+            }
+        }, 100);        
     })
 
     /*window.onblur = function(){

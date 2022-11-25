@@ -14,8 +14,6 @@
 </head>
 <body>
     <canvas id="canvas1"></canvas>
-    <button id="forward">Forward</button>
-    <button id="backward">Backward</button>
     <img id="playerImage" src="player - Kopie.png">
     <img id="backgroundImage" src="background.png">
     <img id="enemyImage" src="obstacle.png">
@@ -23,6 +21,8 @@
 
     <!-- <button id="fullScreenButton">Toggle fullscreen</button> -->
     
+    <button id="forward">Forward</button>
+    <button id="backward">Backward</button>
     <button id="playChoice">Select</button>
     <button id="startButton">Start</button>
     <button id="homeButton">Home</button>
