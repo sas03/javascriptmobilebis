@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#009578">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="images/WGFavicon.png">
+    <link rel="apple-touch-icon" href="soslogo.PNG">
 </head>
 <body>
     <canvas id="canvas1"></canvas>
