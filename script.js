@@ -29,7 +29,7 @@ window.addEventListener('load', function(){
 
     let audio1 = new Audio();
     audio1.src = 'danger.mp3';
-    audio1.volume = 0.2;
+    audio1.volume = 0.4;
 
     let audio2 = new Audio();
     audio2.src = 'bana.wav';
@@ -66,8 +66,9 @@ window.addEventListener('load', function(){
     audioX.src = 'explodemini.wav';
     audioX.volume = 0.2;
 
-    var window_focus = true;
-
+    let window_focus = true;
+    let home_music = true;
+    
     body.addEventListener('click', function(e){
         if(e.target.id == 'playChoice'){
             
@@ -76,16 +77,7 @@ window.addEventListener('load', function(){
         } else{
             audioH.play();
             audioH.loop = true;
-    
-            window.onblur = function() { 
-                window_focus = false;
-                audioH.pause();
-            }
-    
-            window.onfocus = function() { 
-                window_focus = true;
-                audioH.play();
-            }
+            home_music = true;
         }     
     }, {once: true} );
     
@@ -534,44 +526,44 @@ window.addEventListener('load', function(){
             context.drawImage(player.scoreboard, canvas.width - 350, canvas.height - 500);
             if(localStorage.getItem('score') >= 1000){
                 context.fillStyle = '#340000';
-                context.fillRect(canvas.width - 250, canvas.height - 420, 150, 50);
+                context.fillRect(canvas.width - 250, canvas.height - 430, 150, 50);
                 context.fillStyle = 'white';
-                context.fillText("Me: "+ localStorage.getItem('score'), canvas.width - 170, canvas.height - 380);
+                context.fillText("Me: "+ localStorage.getItem('score'), canvas.width - 170, canvas.height - 395);
                 context.fillStyle = 'white';
-                context.fillText("1000", canvas.width - 190, canvas.height - 330);
-                context.fillText("500", canvas.width - 190, canvas.height - 280);
-                context.fillText("250", canvas.width - 190, canvas.height - 230);
-                context.fillText("175", canvas.width - 190, canvas.height - 180);
+                context.fillText("1000", canvas.width - 190, canvas.height - 350);
+                context.fillText("500", canvas.width - 190, canvas.height - 305);
+                context.fillText("250", canvas.width - 190, canvas.height - 255);
+                context.fillText("175", canvas.width - 190, canvas.height - 205);
             }
             if(localStorage.getItem('score') >= 500 && localStorage.getItem('score') < 1000){
                 context.fillStyle = '#340000';
-                context.fillRect(canvas.width - 250, canvas.height - 370, 150, 50);
+                context.fillRect(canvas.width - 250, canvas.height - 385, 150, 50);
                 context.fillStyle = 'white';
-                context.fillText("1000", canvas.width - 190, canvas.height - 380);
-                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 330);
-                context.fillText("500", canvas.width - 190, canvas.height - 280);
-                context.fillText("250", canvas.width - 190, canvas.height - 230);
-                context.fillText("175", canvas.width - 190, canvas.height - 180);
+                context.fillText("1000", canvas.width - 190, canvas.height - 395);
+                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 350);
+                context.fillText("500", canvas.width - 190, canvas.height - 305);
+                context.fillText("250", canvas.width - 190, canvas.height - 255);
+                context.fillText("175", canvas.width - 190, canvas.height - 205);
             }
             if(localStorage.getItem('score') >= 250 && localStorage.getItem('score') < 500){
                 context.fillStyle = '#340000';
-                context.fillRect(canvas.width - 250, canvas.height - 320, 150, 50);
+                context.fillRect(canvas.width - 250, canvas.height - 340, 150, 50);
                 context.fillStyle = 'white';
-                context.fillText("1000", canvas.width - 190, canvas.height - 380);
-                context.fillText("500", canvas.width - 190, canvas.height - 330);
-                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 280);
-                context.fillText("250", canvas.width - 190, canvas.height - 230);
-                context.fillText("175", canvas.width - 190, canvas.height - 180);
+                context.fillText("1000", canvas.width - 190, canvas.height - 395);
+                context.fillText("500", canvas.width - 190, canvas.height - 350);
+                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 305);
+                context.fillText("250", canvas.width - 190, canvas.height - 255);
+                context.fillText("175", canvas.width - 190, canvas.height - 205);
             }
             if(localStorage.getItem('score') >= 175 && localStorage.getItem('score') < 250){
                 context.fillStyle = '#340000';
                 context.fillRect(canvas.width - 250, canvas.height - 270, 150, 50);
                 context.fillStyle = 'white';
-                context.fillText("1000", canvas.width - 190, canvas.height - 380);
-                context.fillText("500", canvas.width - 190, canvas.height - 330);
-                context.fillText("250", canvas.width - 190, canvas.height - 280);
-                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 230);
-                context.fillText("175", canvas.width - 190, canvas.height - 180);
+                context.fillText("1000", canvas.width - 190, canvas.height - 395);
+                context.fillText("500", canvas.width - 190, canvas.height - 350);
+                context.fillText("250", canvas.width - 190, canvas.height - 305);
+                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 255);
+                context.fillText("175", canvas.width - 190, canvas.height - 205);
             }
             if(localStorage.getItem('score') >= 100 && localStorage.getItem('score') < 175){
                 context.fillStyle = '#340000';
@@ -584,11 +576,11 @@ window.addEventListener('load', function(){
                 context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 205);
             } 
             if(localStorage.getItem('score') >= 0 && localStorage.getItem('score') < 100) {
-                context.fillText("1000", canvas.width - 190, canvas.height - 380);
-                context.fillText("500", canvas.width - 190, canvas.height - 330);
-                context.fillText("250", canvas.width - 190, canvas.height - 280);
-                context.fillText("175", canvas.width - 190, canvas.height - 230);
-                context.fillText("100", canvas.width - 190, canvas.height - 180);
+                context.fillText("1000", canvas.width - 190, canvas.height - 395);
+                context.fillText("500", canvas.width - 190, canvas.height - 350);
+                context.fillText("250", canvas.width - 190, canvas.height - 305);
+                context.fillText("175", canvas.width - 190, canvas.height - 255);
+                context.fillText("100", canvas.width - 190, canvas.height - 205);
             }
             //context.fillStyle = 'orange';
             //context.fillRect(canvas.width - 600, canvas.height - 400, 150, 100);
@@ -794,6 +786,7 @@ window.addEventListener('load', function(){
     let playchoice = document.getElementById("playChoice");
     playchoice.addEventListener('click', function(){
         audioH.pause();
+        home_music = false;
         playchoice.style.visibility = 'hidden';
         donation.style.visibility = 'hidden';
         startButton.style.visibility = 'visible';
@@ -1107,16 +1100,8 @@ window.addEventListener('load', function(){
         audioH.play();
         audioH.currentTime = 0;
         audioH.loop = true;
+        home_music = true;
 
-        window.onblur = function() { 
-            window_focus = false;
-            audioH.pause();
-        }
-
-        window.onfocus = function() { 
-            window_focus = true;
-            audioH.play();
-        }
         playchoice.style.visibility = 'visible';
         donation.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
@@ -1205,48 +1190,56 @@ window.addEventListener('load', function(){
 
     window.onblur = function() { 
         window_focus = false; 
-        if(background.images[background.i] == 'background.png'){
-            audio.pause(); 
-        } else if(background.images[background.i] == 'background_single.png'){
-            audio1.pause();
-        } else if(background.images[background.i] == 'banag.png'){
-            audio2.pause();
-        } else if(background.images[background.i] == 'eiffel.PNG'){
-            audio3.pause();
-        } else if(background.images[background.i] == 'pyramids.png'){
-            audio4.pause();
-        } else if(background.images[background.i] == 'douala.jpg'){
-            audio5.pause();
-        } else if(background.images[background.i] == 'yaounde.jpg'){
-            audio6.pause();
-        } else if(background.images[background.i] == 'newyork.PNG'){
-            audio7.pause();
-        } else if(background.images[background.i] == 'dubai.jpg'){
-            audio8.pause();
-        }
+        if(home_music == true){
+            audioH.pause();
+        } else if(home_music == false){
+            if(background.images[background.i] == 'background.png'){
+                audio.pause(); 
+            } else if(background.images[background.i] == 'background_single.png'){
+                audio1.pause();
+            } else if(background.images[background.i] == 'banag.png'){
+                audio2.pause();
+            } else if(background.images[background.i] == 'eiffel.PNG'){
+                audio3.pause();
+            } else if(background.images[background.i] == 'pyramids.png'){
+                audio4.pause();
+            } else if(background.images[background.i] == 'douala.jpg'){
+                audio5.pause();
+            } else if(background.images[background.i] == 'yaounde.jpg'){
+                audio6.pause();
+            } else if(background.images[background.i] == 'newyork.PNG'){
+                audio7.pause();
+            } else if(background.images[background.i] == 'dubai.jpg'){
+                audio8.pause();
+            }
+        }        
     }
     window.onfocus = function() { 
         window_focus = true;
         //pauseButton.style.visibility = 'visible';
-        if(!gameOver){  
-            if(background.images[background.i] == 'background.png'){//--added--
-                audio.play();
-            } else if(background.images[background.i] == 'background_single.png'){
-                audio1.play();
-            } else if(background.images[background.i] == 'banag.png'){
-                audio2.play();
-            } else if(background.images[background.i] == 'eiffel.PNG'){
-                audio3.play();
-            } else if(background.images[background.i] == 'pyramids.png'){
-                audio4.play();
-            } else if(background.images[background.i] == 'douala.jpg'){
-                audio5.play();
-            } else if(background.images[background.i] == 'yaounde.jpg'){
-                audio6.play();
-            } else if(background.images[background.i] == 'newyork.PNG'){
-                audio7.play();
-            } else if(background.images[background.i] == 'dubai.jpg'){
-                audio8.play();
+        if(home_music == true){
+            audioH.play();
+        } else if(home_music == false){
+            if(!gameOver){  
+                if(background.images[background.i] == 'background.png'){//--added--
+                    audio.play();
+                } else if(background.images[background.i] == 'background_single.png'){
+                    audio1.play();
+                } else if(background.images[background.i] == 'banag.png'){
+                    audio2.play();
+                } else if(background.images[background.i] == 'eiffel.PNG'){
+                    audio3.play();
+                } else if(background.images[background.i] == 'pyramids.png'){
+                    audio4.play();
+                } else if(background.images[background.i] == 'douala.jpg'){
+                    audio5.play();
+                } else if(background.images[background.i] == 'yaounde.jpg'){
+                    audio6.play();
+                } else if(background.images[background.i] == 'newyork.PNG'){
+                    audio7.play();
+                } else if(background.images[background.i] == 'dubai.jpg'){
+                    audio8.play();
+                }
             }
         } 
     }
