@@ -14,6 +14,7 @@ window.addEventListener('load', function(){
     let score = 0;
     let gameOver = true;
     const fullScreenButton = document.getElementById('fullScreenButton');
+    const donation = document.getElementById('donation');
 
     const startButton = document.getElementById('startButton');
     const pauseButton = document.getElementById('pauseButton');
@@ -27,13 +28,66 @@ window.addEventListener('load', function(){
     audio.volume = 0.2;
 
     let audio1 = new Audio();
-    audio1.src = 'explodemini.wav';
+    audio1.src = 'danger.mp3';
     audio1.volume = 0.2;
 
     let audio2 = new Audio();
-    audio2.src = 'danger.mp3';
+    audio2.src = 'bana.wav';
     audio2.volume = 0.2;
 
+    let audio3 = new Audio();
+    audio3.src = 'paris.wav';
+    audio3.volume = 0.2;
+    
+    let audio4 = new Audio();
+    audio4.src = 'pyramid.wav';
+    audio4.volume = 0.2;
+
+    let audio5 = new Audio();
+    audio5.src = 'douala.wav';
+    audio5.volume = 0.2;
+
+    let audio6 = new Audio();
+    audio6.src = 'yaounde.mp3';
+    audio6.volume = 0.2;
+
+    let audio7 = new Audio();
+    audio7.src = 'newyork.mp3';
+    audio7.volume = 0.2;
+
+    let audio8 = new Audio();
+    audio8.src = 'dubai.mp3';
+    audio8.volume = 0.2;
+
+    let audioH = new Audio('home.mp3');
+    audio.volume = 0.2;
+
+    let audioX = new Audio();
+    audioX.src = 'explodemini.wav';
+    audioX.volume = 0.2;
+
+    body.addEventListener('click', function(e){
+        if(e.target.id == 'playChoice'){
+            
+        } else if(e.target.id == 'donateButton'){
+
+        } else{
+            audioH.play();
+            audioH.loop = true;
+            var window_focus = true;
+    
+            window.onblur = function() { 
+                window_focus = false;
+                audioH.pause();
+            }
+    
+            window.onfocus = function() { 
+                window_focus = true;
+                audioH.play();
+            }
+        }     
+    }, {once: true} );
+    
     // apply eventlisteners to keyboard events and hold an array of all currently active keys
     class InputHandler{
         constructor(){
@@ -259,7 +313,7 @@ window.addEventListener('load', function(){
             this.height = 720;
             this.speed = 20;
             this.i = 0;
-            this.images = ["background.png", "background_single.png", "bana2.png", "eiffel.PNG", "pyramid.PNG"];
+            this.images = ["background.png", "background_single.png", "banag.png", "eiffel.PNG", "pyramids.png", "douala.jpg", "yaounde.jpg", "newyork.PNG", "dubai.jpg"];
         }
         playField(bgImage){
             this.image.src = bgImage;
@@ -567,19 +621,19 @@ window.addEventListener('load', function(){
             audio.play();
         } else if(background.images[background.i] == 'background_single.png'){
             //audio loop when game is running
-            if (typeof audio2.loop == 'boolean')
+            if (typeof audio1.loop == 'boolean')
             {
-                audio2.loop = true;
+                audio1.loop = true;
             }
             else
             {
-                audio2.addEventListener('ended', function() {
+                audio1.addEventListener('ended', function() {
                     this.currentTime = 0;
                     this.play();
                 }, false);
             }
-            audio2.play();
-        } else if(background.images[background.i] == 'bana2.png'){            
+            audio1.play();
+        } else if(background.images[background.i] == 'banag.png'){            
             //audio loop when game is running
             if (typeof audio2.loop == 'boolean')
             {
@@ -596,33 +650,88 @@ window.addEventListener('load', function(){
         }
         else if(background.images[background.i] == 'eiffel.PNG'){            
             //audio loop when game is running
-            if (typeof audio2.loop == 'boolean')
+            if (typeof audio3.loop == 'boolean')
             {
-                audio2.loop = true;
+                audio3.loop = true;
             }
             else
             {
-                audio2.addEventListener('ended', function() {
+                audio3.addEventListener('ended', function() {
                     this.currentTime = 0;
                     this.play();
                 }, false);
             }
-            audio2.play();
-        }
-          else if(background.images[background.i] == 'pyramid.PNG'){            
+            audio3.play();
+        } else if(background.images[background.i] == 'pyramids.png'){            
             //audio loop when game is running
-            if (typeof audio2.loop == 'boolean')
+            if (typeof audio4.loop == 'boolean')
             {
-                audio2.loop = true;
+                audio4.loop = true;
             }
             else
             {
-                audio2.addEventListener('ended', function() {
+                audio4.addEventListener('ended', function() {
                     this.currentTime = 0;
                     this.play();
                 }, false);
             }
-            audio2.play();
+            audio4.play();
+        } else if(background.images[background.i] == 'douala.jpg'){            
+            //audio loop when game is running
+            if (typeof audio5.loop == 'boolean')
+            {
+                audio5.loop = true;
+            }
+            else
+            {
+                audio5.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+            audio5.play();
+        } else if(background.images[background.i] == 'yaounde.jpg'){            
+            //audio loop when game is running
+            if (typeof audio6.loop == 'boolean')
+            {
+                audio6.loop = true;
+            }
+            else
+            {
+                audio6.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+            audio6.play();
+        } else if(background.images[background.i] == 'newyork.PNG'){            
+            //audio loop when game is running
+            if (typeof audio7.loop == 'boolean')
+            {
+                audio7.loop = true;
+            }
+            else
+            {
+                audio7.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+            audio7.play();
+        } else if(background.images[background.i] == 'dubai.jpg'){            
+            //audio loop when game is running
+            if (typeof audio8.loop == 'boolean')
+            {
+                audio8.loop = true;
+            }
+            else
+            {
+                audio8.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+            audio8.play();
         }
         enemies = [];
         score = 0;
@@ -683,7 +792,9 @@ window.addEventListener('load', function(){
     
     let playchoice = document.getElementById("playChoice");
     playchoice.addEventListener('click', function(){
+        audioH.pause();
         playchoice.style.visibility = 'hidden';
+        donation.style.visibility = 'hidden';
         startButton.style.visibility = 'visible';
         homeButton.style.visibility = 'visible';
         fwd.style.visibility = 'hidden';
@@ -747,6 +858,7 @@ window.addEventListener('load', function(){
     let fwd = document.getElementById('forward');
     fwd.addEventListener('click', () => {
         playchoice.style.visibility = 'visible';
+        donation.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
         homeButton.style.visibility = 'hidden';
         background.image.src = background.images[0];
@@ -806,6 +918,26 @@ window.addEventListener('load', function(){
                 ctx.fillText('In the Desert', canvas.width / 2, 250);
                 ctx.fillStyle = 'white';
                 ctx.fillText('In the Desert', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[5]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Douala Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Douala Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[6]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Yaounde Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Yaounde Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[7]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Newyork Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Newyork Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[8]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Dubai Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Dubai Playfield', canvas.width / 2 + 2, 252);
             }
 
             player.x = 100;
@@ -819,6 +951,7 @@ window.addEventListener('load', function(){
     let bwd = document.getElementById('backward');
     bwd.addEventListener('click', () => {
         playchoice.style.visibility = 'visible';
+        donation.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
         homeButton.style.visibility = 'hidden';
         background.image.src = background.images[0];
@@ -830,8 +963,8 @@ window.addEventListener('load', function(){
             // Remove 1 to Index
             background.i--;
         } else {
-            // Reset Back To 0 to initialize the image source back to the index of 4
-            background.i = 4;
+            // Reset Back To 0 to initialize the image source back to the index of 8
+            background.i = 8;
         }
         background.image.onload = function(){
             
@@ -878,6 +1011,26 @@ window.addEventListener('load', function(){
                 ctx.fillText('In the Desert', canvas.width / 2, 250);
                 ctx.fillStyle = 'white';
                 ctx.fillText('In the Desert', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[5]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Douala Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Douala Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[6]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Yaounde Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Yaounde Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[7]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Newyork Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Newyork Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[8]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Dubai Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Dubai Playfield', canvas.width / 2 + 2, 252);
             }
 
             player.x = 100;
@@ -913,11 +1066,33 @@ window.addEventListener('load', function(){
             if(audio.paused == false){
                 audio.pause();
                 audio.currentTime = 0;
-            } else if(audio2.paused == false){
+            } else if(audio1.paused == false){
+                audio1.pause();
+                audio1.currentTime = 0;
+            }
+              else if(audio2.paused == false){
                 audio2.pause();
                 audio2.currentTime = 0;
+            } else if(audio3.paused == false){
+                audio3.pause();
+                audio3.currentTime = 0;
+            } else if(audio4.paused == false){
+                audio4.pause();
+                audio4.currentTime = 0;
+            } else if(audio5.paused == false){
+                audio5.pause();
+                audio5.currentTime = 0;
+            } else if(audio6.paused == false){
+                audio6.pause();
+                audio6.currentTime = 0;
+            } else if(audio7.paused == false){
+                audio7.pause();
+                audio7.currentTime = 0;
+            } else if(audio8.paused == false){
+                audio8.pause();
+                audio8.currentTime = 0;
             }
-            audio1.play();
+            audioX.play();
         }
     }
 
@@ -928,7 +1103,10 @@ window.addEventListener('load', function(){
     })
     
     homeButton.addEventListener('click', function(){
+        audioH.play();
+        audioH.currentTime = 0;
         playchoice.style.visibility = 'visible';
+        donation.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
         homeButton.style.visibility = 'hidden';
         fwd.style.visibility = 'visible';
@@ -979,6 +1157,26 @@ window.addEventListener('load', function(){
                 ctx.fillText('In the Desert', canvas.width / 2, 250);
                 ctx.fillStyle = 'white';
                 ctx.fillText('In the Desert', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[5]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Douala Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Douala Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[6]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Yaounde Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Yaounde Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[7]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Newyork Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Newyork Playfield', canvas.width / 2 + 2, 252);
+            } else if(background.images[background.i] == background.images[8]){
+                ctx.fillStyle = 'black';
+                ctx.fillText('Dubai Playfield', canvas.width / 2, 250);
+                ctx.fillStyle = 'white';
+                ctx.fillText('Dubai Playfield', canvas.width / 2 + 2, 252);
             }
             
             player.x = 100;
@@ -999,14 +1197,21 @@ window.addEventListener('load', function(){
         if(background.images[background.i] == 'background.png'){
             audio.pause(); 
         } else if(background.images[background.i] == 'background_single.png'){
-            audio2.pause();
-        } else if(background.images[background.i] == 'bana2.png'){
+            audio1.pause();
+        } else if(background.images[background.i] == 'banag.png'){
             audio2.pause();
         } else if(background.images[background.i] == 'eiffel.PNG'){
-            audio2.pause();
-        }
-          else if(background.images[background.i] == 'pyramid.PNG'){
-            audio2.pause();
+            audio3.pause();
+        } else if(background.images[background.i] == 'pyramids.png'){
+            audio4.pause();
+        } else if(background.images[background.i] == 'douala.jpg'){
+            audio5.pause();
+        } else if(background.images[background.i] == 'yaounde.jpg'){
+            audio6.pause();
+        } else if(background.images[background.i] == 'newyork.PNG'){
+            audio7.pause();
+        } else if(background.images[background.i] == 'dubai.jpg'){
+            audio8.pause();
         }
     }
     window.onfocus = function() { 
@@ -1016,13 +1221,21 @@ window.addEventListener('load', function(){
             if(background.images[background.i] == 'background.png'){//--added--
                 audio.play();
             } else if(background.images[background.i] == 'background_single.png'){
-                audio2.play();
-            } else if(background.images[background.i] == 'bana2.png'){
+                audio1.play();
+            } else if(background.images[background.i] == 'banag.png'){
                 audio2.play();
             } else if(background.images[background.i] == 'eiffel.PNG'){
-                audio2.play();
-            } else if(background.images[background.i] == 'pyramid.PNG'){
-                audio2.play();
+                audio3.play();
+            } else if(background.images[background.i] == 'pyramids.png'){
+                audio4.play();
+            } else if(background.images[background.i] == 'douala.jpg'){
+                audio5.play();
+            } else if(background.images[background.i] == 'yaounde.jpg'){
+                audio6.play();
+            } else if(background.images[background.i] == 'newyork.PNG'){
+                audio7.play();
+            } else if(background.images[background.i] == 'dubai.jpg'){
+                audio8.play();
             }
         } 
     }

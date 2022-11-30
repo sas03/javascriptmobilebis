@@ -8,8 +8,34 @@
 
 body{
     /*background: rgb(25, 122, 85);*/
-    background: url('mainbackground.gif');
-    background-size: 100% auto;
+    background: url('mainbackground.gif') no-repeat;
+    height: 100%;
+    max-height: 100%;
+    background-size: 100% 2000px;
+}
+
+#donation{
+    position: absolute;
+    font-size: 20px;
+    padding: 10px;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(201, 124, 53);
+    text-shadow: 2px 2px #000;
+}
+
+#donateButton{
+    height: 35px;
+    width: 55px;
+    background-color: crimson;
+    border: 2px solid crimson;
+    color: white;
+}
+
+#donateButton:hover{
+    background-color: rgb(218, 79, 137);
+    cursor: pointer;
 }
 
 #canvas1{
@@ -43,20 +69,24 @@ body{
     border-radius: 20px;
 }
 
+#fullScreenButton{
+    cursor: pointer;
+}
+
 #forward{
     position: absolute;
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px;
     top: 50%;
-    left: 90%;
-    transform: translateX(-50%);
-    height: 45px;
-    width: 100px;
+    right: 10%;
+    transform: rotate(10deg);
+    height: 60px;
+    width: 60px;
     color: #fff;
     text-shadow: 2px 2px #000;
     background-color: rgb(91, 218, 175);
     border: 2px solid rgb(255, 255, 255);
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 #forward:hover{
@@ -66,18 +96,18 @@ body{
 
 #backward{
     position: absolute;
-    font-size: 20px;
+    font-size: 30px;
     padding: 10px;
     top: 50%;
     left: 10%;
-    transform: translateX(-50%);
-    height: 45px;
-    width: 100px;
+    transform: rotate(20deg);
+    height: 60px;
+    width: 60px;
     color: #fff;
     text-shadow: 2px 2px #000;
     background-color: rgb(91, 218, 175);
     border: 2px solid rgb(255, 255, 255);
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 #backward:hover{
@@ -92,7 +122,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
-    height: 75px;
+    height: 55px;
     width: 100px;
     color: #fff;
     text-shadow: 2px 2px #000;

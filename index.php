@@ -21,12 +21,23 @@
 
     <button id="fullScreenButton">Toggle fullscreen</button> 
     
-    <button id="forward">Forward</button>
-    <button id="backward">Backward</button>
+    <button id="forward"> > </button>
+    <button id="backward"> < </button>
     <button id="playChoice">Select</button>
     <button id="startButton">Start</button>
     <button id="homeButton">Home</button>
     <!--<button id="pauseButton">Pause</button>-->
+
+    <!-- Bana Playfield Button 
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="U3Q2JQR335QS8">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+    -->
+
+    <div id="donation">Wanna support SOS ? <a href="https://www.paypal.com/donate/?hosted_button_id=36LDCEBCSNQZQ"><button id="donateButton">Donate</button></a></div>
 
     <div id="policy">Privacy terms: <a href="privacy_policy.html">Privacy Policy</a></div>
     <script src="script.js"></script>
