@@ -864,7 +864,7 @@ window.addEventListener('load', function(){
         background.image.src = background.images[0];
         body.style.backgroundColor = "rgb(25, 122, 85)";
         body.style.backgroundImage = "url('mainbackground.gif')";
-        body.style.backgroundSize = "100% auto";
+        body.style.backgroundSize = "100% 2000px";
         // Check If Index Is Under Max
         if(background.i < background.images.length - 1){
             // Add 1 to Index
@@ -957,7 +957,7 @@ window.addEventListener('load', function(){
         background.image.src = background.images[0];
         body.style.backgroundColor = "rgb(25, 122, 85)";
         body.style.backgroundImage = "url('mainbackground.gif')";
-        body.style.backgroundSize = "100% auto";
+        body.style.backgroundSize = "100% 2000px";
         // Check If Index Is Over 0
         if(background.i > 0){
             // Remove 1 to Index
