@@ -1111,7 +1111,7 @@ window.addEventListener('load', function(){
         background.image.src = background.images[background.i];
         body.style.backgroundColor = "rgb(25, 122, 85)";
         body.style.backgroundImage = "url('mainbackground.gif')";
-        body.style.backgroundSize = "100% auto";
+        body.style.backgroundSize = "100% 2000px";
         background.image.onload = function(){
             background.x = 0;
             ctx.clearRect(0,0,canvas.width, canvas.height);
