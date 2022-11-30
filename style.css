@@ -18,9 +18,10 @@ body{
 
 #donation{
     position: absolute;
+    text-align: center;
     font-size: 20px;
     padding: 10px;
-    bottom: 15%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     color: rgb(201, 124, 53);
