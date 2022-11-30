@@ -575,13 +575,13 @@ window.addEventListener('load', function(){
             }
             if(localStorage.getItem('score') >= 100 && localStorage.getItem('score') < 175){
                 context.fillStyle = '#340000';
-                context.fillRect(canvas.width - 250, canvas.height - 220, 150, 50);
+                context.fillRect(canvas.width - 250, canvas.height - 240, 150, 50);
                 context.fillStyle = 'white';
-                context.fillText("1000", canvas.width - 190, canvas.height - 380);
-                context.fillText("500", canvas.width - 190, canvas.height - 330);
-                context.fillText("250", canvas.width - 190, canvas.height - 280);
-                context.fillText("175", canvas.width - 190, canvas.height - 230);
-                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 180);
+                context.fillText("1000", canvas.width - 190, canvas.height - 395);
+                context.fillText("500", canvas.width - 190, canvas.height - 350);
+                context.fillText("250", canvas.width - 190, canvas.height - 305);
+                context.fillText("175", canvas.width - 190, canvas.height - 255);
+                context.fillText("Me: " + localStorage.getItem('score'), canvas.width - 190, canvas.height - 205);
             } 
             if(localStorage.getItem('score') >= 0 && localStorage.getItem('score') < 100) {
                 context.fillText("1000", canvas.width - 190, canvas.height - 380);
