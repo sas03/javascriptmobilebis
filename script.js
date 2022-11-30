@@ -66,6 +66,8 @@ window.addEventListener('load', function(){
     audioX.src = 'explodemini.wav';
     audioX.volume = 0.2;
 
+    var window_focus = true;
+
     body.addEventListener('click', function(e){
         if(e.target.id == 'playChoice'){
             
@@ -74,7 +76,6 @@ window.addEventListener('load', function(){
         } else{
             audioH.play();
             audioH.loop = true;
-            var window_focus = true;
     
             window.onblur = function() { 
                 window_focus = false;
@@ -1105,6 +1106,17 @@ window.addEventListener('load', function(){
     homeButton.addEventListener('click', function(){
         audioH.play();
         audioH.currentTime = 0;
+        audioH.loop = true;
+
+        window.onblur = function() { 
+            window_focus = false;
+            audioH.pause();
+        }
+
+        window.onfocus = function() { 
+            window_focus = true;
+            audioH.play();
+        }
         playchoice.style.visibility = 'visible';
         donation.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
@@ -1190,7 +1202,6 @@ window.addEventListener('load', function(){
     /*window.onblur = function(){
         audio.pause();
     }*/
-    var window_focus = true;
 
     window.onblur = function() { 
         window_focus = false; 
