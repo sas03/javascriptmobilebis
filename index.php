@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="soslogo.PNG">
+    <link rel="icon" type="image/x-icon" href="images/soslogo.PNG">
     <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
     <title>SickorSafe</title>
     <meta name="theme-color" content="#009578">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="soslogo.PNG">
+    <link rel="apple-touch-icon" href="images/soslogo.PNG">
 </head>
 <body>
     <canvas id="canvas1"></canvas>
-    <img id="playerImage" src="player - Kopie.png">
-    <img id="backgroundImage" src="background.png">
-    <img id="enemyImage" src="obstacle.png">
-    <img id="scoreboard" src="scoreboard.png">
+    <img id="playerImage" src="images/player - Kopie.png">
+    <img id="backgroundImage" src="images/background.png">
+    <img id="enemyImage" src="images/obstacle.png">
+    <img id="scoreboard" src="images/scoreboard.png">
 
     <button id="fullScreenButton">Toggle fullscreen</button> 
     

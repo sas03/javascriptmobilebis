@@ -8,7 +8,7 @@
     "description": "Gotta Dodge Dem All",
     "icons": [
         {
-            "src": "soslogo.PNG",
+            "src": "images/soslogo.PNG",
             "sizes": "192x192",
             "type": "image/png"
         }

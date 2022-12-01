@@ -24,46 +24,46 @@ window.addEventListener('load', function(){
     //pauseButton.style.visibility = 'hidden';
 
     let audio = new Audio();
-    audio.src = 'spell.wav';
+    audio.src = 'audio/spell.mp3';
     audio.volume = 0.2;
 
     let audio1 = new Audio();
-    audio1.src = 'danger.mp3';
+    audio1.src = 'audio/danger.mp3';
     audio1.volume = 0.4;
 
     let audio2 = new Audio();
-    audio2.src = 'bana.wav';
+    audio2.src = 'audio/bana.mp3';
     audio2.volume = 0.2;
 
     let audio3 = new Audio();
-    audio3.src = 'paris.wav';
+    audio3.src = 'audio/paris.mp3';
     audio3.volume = 0.2;
     
     let audio4 = new Audio();
-    audio4.src = 'pyramid.wav';
+    audio4.src = 'audio/pyramid.mp3';
     audio4.volume = 0.2;
 
     let audio5 = new Audio();
-    audio5.src = 'douala.wav';
+    audio5.src = 'audio/douala.mp3';
     audio5.volume = 0.2;
 
     let audio6 = new Audio();
-    audio6.src = 'yaounde.mp3';
+    audio6.src = 'audio/yaounde.mp3';
     audio6.volume = 0.2;
 
     let audio7 = new Audio();
-    audio7.src = 'newyork.mp3';
+    audio7.src = 'audio/newyork.mp3';
     audio7.volume = 0.2;
 
     let audio8 = new Audio();
-    audio8.src = 'dubai.mp3';
+    audio8.src = 'audio/dubai.mp3';
     audio8.volume = 0.2;
 
-    let audioH = new Audio('home.mp3');
+    let audioH = new Audio('audio/home.mp3');
     audio.volume = 0.2;
 
     let audioX = new Audio();
-    audioX.src = 'explodemini.wav';
+    audioX.src = 'audio/explodemini.mp3';
     audioX.volume = 0.2;
 
     let window_focus = true;
@@ -306,7 +306,7 @@ window.addEventListener('load', function(){
             this.height = 720;
             this.speed = 20;
             this.i = 0;
-            this.images = ["background.png", "background_single.png", "banag.png", "eiffel.PNG", "pyramids.png", "douala.jpg", "yaounde.jpg", "newyork.PNG", "dubai.jpg"];
+            this.images = ["images/background.png", "images/background_single.png", "images/banag.png", "images/eiffel.PNG", "images/pyramids.png", "images/douala.jpg", "images/yaounde.jpg", "images/newyork.PNG", "images/dubai.jpg"];
         }
         playField(bgImage){
             this.image.src = bgImage;
@@ -598,7 +598,7 @@ window.addEventListener('load', function(){
         player.restart();
         //restart background to it's initial position
         background.restart();
-        if(background.images[background.i] == 'background.png'){
+        if(background.images[background.i] == 'images/background.png'){
             //audio loop when game is running
             if (typeof audio.loop == 'boolean')
             {
@@ -612,7 +612,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio.play();
-        } else if(background.images[background.i] == 'background_single.png'){
+        } else if(background.images[background.i] == 'images/background_single.png'){
             //audio loop when game is running
             if (typeof audio1.loop == 'boolean')
             {
@@ -626,7 +626,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio1.play();
-        } else if(background.images[background.i] == 'banag.png'){            
+        } else if(background.images[background.i] == 'images/banag.png'){            
             //audio loop when game is running
             if (typeof audio2.loop == 'boolean')
             {
@@ -641,7 +641,7 @@ window.addEventListener('load', function(){
             }
             audio2.play();
         }
-        else if(background.images[background.i] == 'eiffel.PNG'){            
+        else if(background.images[background.i] == 'images/eiffel.PNG'){            
             //audio loop when game is running
             if (typeof audio3.loop == 'boolean')
             {
@@ -655,7 +655,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio3.play();
-        } else if(background.images[background.i] == 'pyramids.png'){            
+        } else if(background.images[background.i] == 'images/pyramids.png'){            
             //audio loop when game is running
             if (typeof audio4.loop == 'boolean')
             {
@@ -669,7 +669,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio4.play();
-        } else if(background.images[background.i] == 'douala.jpg'){            
+        } else if(background.images[background.i] == 'images/douala.jpg'){            
             //audio loop when game is running
             if (typeof audio5.loop == 'boolean')
             {
@@ -683,7 +683,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio5.play();
-        } else if(background.images[background.i] == 'yaounde.jpg'){            
+        } else if(background.images[background.i] == 'images/yaounde.jpg'){            
             //audio loop when game is running
             if (typeof audio6.loop == 'boolean')
             {
@@ -697,7 +697,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio6.play();
-        } else if(background.images[background.i] == 'newyork.PNG'){            
+        } else if(background.images[background.i] == 'images/newyork.PNG'){            
             //audio loop when game is running
             if (typeof audio7.loop == 'boolean')
             {
@@ -711,7 +711,7 @@ window.addEventListener('load', function(){
                 }, false);
             }
             audio7.play();
-        } else if(background.images[background.i] == 'dubai.jpg'){            
+        } else if(background.images[background.i] == 'images/dubai.jpg'){            
             //audio loop when game is running
             if (typeof audio8.loop == 'boolean')
             {
@@ -813,7 +813,7 @@ window.addEventListener('load', function(){
         }
         else if(background.images[background.i] == background.images[1]){
             body.style.backgroundColor = "darkslategray";
-            body.style.backgroundImage = "url('grafity1.jpg')";
+            body.style.backgroundImage = "url('images/grafity1.jpg')";
             background.image.onload = function(){
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
@@ -825,7 +825,7 @@ window.addEventListener('load', function(){
             }
         }
         else if(background.images[background.i] == background.images[2]){
-            body.style.backgroundImage = "url('grafity1.jpg')";
+            body.style.backgroundImage = "url('images/grafity1.jpg')";
             background.image.onload = function(){
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
@@ -836,7 +836,7 @@ window.addEventListener('load', function(){
                 ctx.fillText('CORONA ATTACK, press Enter or swipe down to start!', canvas.width / 2 + 2, 202);
             }
         } else{
-            body.style.backgroundImage = "url('grafity1.jpg')";
+            body.style.backgroundImage = "url('images/grafity1.jpg')";
             background.image.onload = function(){
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
@@ -857,7 +857,7 @@ window.addEventListener('load', function(){
         homeButton.style.visibility = 'hidden';
         background.image.src = background.images[0];
         body.style.backgroundColor = "rgb(25, 122, 85)";
-        body.style.backgroundImage = "url('mainbackground.gif')";
+        body.style.backgroundImage = "url('images/mainbackground.gif')";
         body.style.backgroundSize = "100% 2000px";
         // Check If Index Is Under Max
         if(background.i < background.images.length - 1){
@@ -950,7 +950,7 @@ window.addEventListener('load', function(){
         homeButton.style.visibility = 'hidden';
         background.image.src = background.images[0];
         body.style.backgroundColor = "rgb(25, 122, 85)";
-        body.style.backgroundImage = "url('mainbackground.gif')";
+        body.style.backgroundImage = "url('images/mainbackground.gif')";
         body.style.backgroundSize = "100% 2000px";
         // Check If Index Is Over 0
         if(background.i > 0){
@@ -1110,7 +1110,7 @@ window.addEventListener('load', function(){
         bwd.style.visibility = 'visible';
         background.image.src = background.images[background.i];
         body.style.backgroundColor = "rgb(25, 122, 85)";
-        body.style.backgroundImage = "url('mainbackground.gif')";
+        body.style.backgroundImage = "url('images/mainbackground.gif')";
         body.style.backgroundSize = "100% 2000px";
         background.image.onload = function(){
             background.x = 0;
@@ -1193,23 +1193,23 @@ window.addEventListener('load', function(){
         if(home_music == true){
             audioH.pause();
         } else if(home_music == false){
-            if(background.images[background.i] == 'background.png'){
+            if(background.images[background.i] == 'images/background.png'){
                 audio.pause(); 
-            } else if(background.images[background.i] == 'background_single.png'){
+            } else if(background.images[background.i] == 'images/background_single.png'){
                 audio1.pause();
-            } else if(background.images[background.i] == 'banag.png'){
+            } else if(background.images[background.i] == 'images/banag.png'){
                 audio2.pause();
-            } else if(background.images[background.i] == 'eiffel.PNG'){
+            } else if(background.images[background.i] == 'images/eiffel.PNG'){
                 audio3.pause();
-            } else if(background.images[background.i] == 'pyramids.png'){
+            } else if(background.images[background.i] == 'images/pyramids.png'){
                 audio4.pause();
-            } else if(background.images[background.i] == 'douala.jpg'){
+            } else if(background.images[background.i] == 'images/douala.jpg'){
                 audio5.pause();
-            } else if(background.images[background.i] == 'yaounde.jpg'){
+            } else if(background.images[background.i] == 'images/yaounde.jpg'){
                 audio6.pause();
-            } else if(background.images[background.i] == 'newyork.PNG'){
+            } else if(background.images[background.i] == 'images/newyork.PNG'){
                 audio7.pause();
-            } else if(background.images[background.i] == 'dubai.jpg'){
+            } else if(background.images[background.i] == 'images/dubai.jpg'){
                 audio8.pause();
             }
         }        
@@ -1221,23 +1221,23 @@ window.addEventListener('load', function(){
             audioH.play();
         } else if(home_music == false){
             if(!gameOver){  
-                if(background.images[background.i] == 'background.png'){//--added--
+                if(background.images[background.i] == 'images/background.png'){//--added--
                     audio.play();
-                } else if(background.images[background.i] == 'background_single.png'){
+                } else if(background.images[background.i] == 'images/background_single.png'){
                     audio1.play();
-                } else if(background.images[background.i] == 'banag.png'){
+                } else if(background.images[background.i] == 'images/banag.png'){
                     audio2.play();
-                } else if(background.images[background.i] == 'eiffel.PNG'){
+                } else if(background.images[background.i] == 'images/eiffel.PNG'){
                     audio3.play();
-                } else if(background.images[background.i] == 'pyramids.png'){
+                } else if(background.images[background.i] == 'images/pyramids.png'){
                     audio4.play();
-                } else if(background.images[background.i] == 'douala.jpg'){
+                } else if(background.images[background.i] == 'images/douala.jpg'){
                     audio5.play();
-                } else if(background.images[background.i] == 'yaounde.jpg'){
+                } else if(background.images[background.i] == 'images/yaounde.jpg'){
                     audio6.play();
-                } else if(background.images[background.i] == 'newyork.PNG'){
+                } else if(background.images[background.i] == 'images/newyork.PNG'){
                     audio7.play();
-                } else if(background.images[background.i] == 'dubai.jpg'){
+                } else if(background.images[background.i] == 'images/dubai.jpg'){
                     audio8.play();
                 }
             }
