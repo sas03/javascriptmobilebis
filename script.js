@@ -800,7 +800,7 @@ window.addEventListener('load', function(){
         background.image.src = background.images[background.i];
         if(background.images[background.i] == background.images[0]){
             body.style.backgroundColor = "rgb(22, 145, 150)";
-            body.style.backgroundImage = "url('grafity1.jpg')";
+            body.style.backgroundImage = "url('images/grafity1.jpg')";
             background.image.onload = function(){
                 ctx.clearRect(0,0,canvas.width, canvas.height);
                 background.draw(ctx);
